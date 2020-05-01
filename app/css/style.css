@@ -14,8 +14,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#title{
+#title {
     font-family: 'Yatra One', cursive;
     text-align: center;
     color: rgb(228, 215, 69);
 }
+#intro {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: large;
+    color: rgb(228, 215, 69);
+}
+
+#button {
+    color: rgb(249, 249, 249);
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: large;
+    
+}
+
