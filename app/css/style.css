@@ -10,12 +10,12 @@
 }
 
 body {
-    background-image: url('../images/ls_medium.jpg');
+    background-image: url('../images/114-1142300_middle-earth.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 #title{
     font-family: 'Yatra One', cursive;
     text-align: center;
-    color: azure;
+    color: rgb(228, 215, 69);
 }
