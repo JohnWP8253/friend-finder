@@ -32,13 +32,13 @@ var friends = [
   {
     name: "Saruman",
     photo:
-      "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+      "https://i.pinimg.com/originals/a3/b7/a7/a3b7a7fab3ff446687c9e72156079953.jpg",
     scores: [4, 3, 3, 4, 2, 5, 2, 1, 4, 4],
   },
   {
-    name: "Wormtail",
+    name: "Wormtongue",
     photo:
-      "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+      "https://vignette.wikia.nocookie.net/lotr/images/b/b0/Grima.jpg/revision/latest/top-crop/width/360/height/450?cb=20080707153733",
     scores: [4, 2, 3, 1, 3, 1, 1, 3, 2, 3],
   },
 

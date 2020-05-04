@@ -1,10 +1,10 @@
 @font-face {
   font-family: "RingbearerMedium";
-  src: url("/css/webfont/RingbearerMedium.eot?#iefix")
+  src: url("../css/webfont/RingbearerMedium.eot")
       format("embedded-opentype"),
-    url("/css/webfont/RingbearerMedium.woff") format("woff"),
-    url("/css/webfont/RingbearerMedium.ttf") format("truetype"),
-    url("/css/webfont/RingbearerMedium.svg#RingbearerMedium") format("svg");
+    url("../css/webfont/RingbearerMedium.woff") format("woff"),
+    url("../css/webfont/RingbearerMedium.ttf") format("truetype"),
+    url("../css/webfont/RingbearerMedium.svg#RingbearerMedium") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@ body {
     background-size: cover;
 }
 #title {
-    font-family: 'Yatra One', cursive;
+    font-family: 'RingbearerMedium', cursive;
     text-align: center;
     color: rgb(228, 215, 69);
 }
@@ -32,5 +32,12 @@ body {
     text-align: center;
     font-size: large;
     
+}
+
+.questions {
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    font-size: large;
+    color: rgb(228, 215, 69);
 }
 
