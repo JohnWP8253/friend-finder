@@ -17,9 +17,9 @@
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <!-- css stylesheet link-->
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/app/public/css/style.css" />
 </head>
-<body id="survey-body">
+<body>
   <div class="container content">
 		<h1 id="title">Survey</h1>
 		<p id="intro">Take a quick survey to find your perfect match in Middle Earth! You answer questions from (1 - 5). (1) meaning you totally disagree whereas (5) means you totally agree. (3) is neither disagree or agree. Good luck!</p>
@@ -167,7 +167,7 @@
 
 	<footer>
 		<div class="container">
-			<a href="/app/data/friends.js">Discover Friends in Middle Earth API</a>
+			<a href="/api/friends">Discover Friends in Middle Earth API</a>
 			<span>|</span>
 			<a href="https://github.com/JohnWP8253/friend-finder">GitHub Repo</a>
 		</div>
@@ -177,52 +177,50 @@
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
 	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	  crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+    $("#submitBtn").on("click", function(event) {
+      event.preventDefault();
+  
+      // Form validation
+      var valid = true;
+  
+      if($("#name").val() === "" || $("#photo").val() === "") {
+        valid = false;
+      } else if($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() === "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6").val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $("#question9").val() === "empty" || $("#question10").val() === "empty") {
+        valid = false;
+      }
+  
+      if(valid === true) {
+        var newUser = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: [
+            $("#question1").val(),
+            $("#question2").val(),
+            $("#question3").val(),
+            $("#question4").val(),
+            $("#question5").val(),
+            $("#question6").val(),
+            $("#question7").val(),
+            $("#question8").val(),
+            $("#question9").val(),
+            $("#question10").val()
+          ]
+        };
+  
+        // Ajax call for receiving response after POST req
+        $.post("/api/friends", newUser, function(data) {
+          $("#bestMatch").text(data.name);
+          $("#bestMatchPhoto").attr("src", data.photo);
+          $("#bestMatchModal").modal("toggle");
+        });
+      } else {
+        // If a required field is missing, show alert
+        alert("Survey is incomplete!");
+      }
+    });
+  </script>
 </body>
 </html>
 
-<script type="text/javascript">
-	$("#submitBtn").on("click", function(event) {
-		event.preventDefault();
-
-		// Form validation
-		var valid = true;
-
-		if($("#name").val() === "" || $("#photo").val() === "") {
-			valid = false;
-		} else if($("#question1").val() === "empty" || $("#question2").val() === "empty" || $("#question3").val() === "empty" || $("#question4").val() === "empty" || $("#question5").val() === "empty" || $("#question6").val() === "empty" || $("#question7").val() === "empty" || $("#question8").val() === "empty" || $("#question9").val() === "empty" || $("#question10").val() === "empty") {
-			valid = false;
-		}
-
-		if(valid === true) {
-			var newUser = {
-				name: $("#name").val().trim(),
-				photo: $("#photo").val().trim(),
-				scores: [
-					$("#question1").val(),
-					$("#question2").val(),
-					$("#question3").val(),
-					$("#question4").val(),
-					$("#question5").val(),
-					$("#question6").val(),
-					$("#question7").val(),
-					$("#question8").val(),
-					$("#question9").val(),
-					$("#question10").val()
-				]
-			};
-
-		
-
-			// Ajax call for receiving response after POST req
-			$.post("/api/friends", newUser, function(data) {
-				$("#bestMatch").text(data.name);
-				$("#bestMatchPhoto").attr("src", data.photo);
-				$("#bestMatchModal").modal("toggle");
-			});
-		} else {
-			// If a required field is missing, show alert
-			alert("Survey is incomplete!");
-		}
-	});
-</script>

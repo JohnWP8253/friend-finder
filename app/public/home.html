@@ -13,17 +13,23 @@
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&family=Yatra+One&display=swap"
       rel="stylesheet"
     />
-    <!-- JQuery cdn -->
-    <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
-    <!-- Compiled and minified CSS -->
+    <!-- JQuery script -->
+    <script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <!-- css stylesheet link-->
-    <link rel="stylesheet" type="text/css" href="/app/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
   </head>
   <body class="home-site">
+    <main>
     <div class="col s12" id="container">
       <div class="row">
         <h1 id="title">Middle Earth Social Network</h1>
@@ -40,13 +46,16 @@
     <div class="center">
       <a href="/survey"><button type="button" id="button" class="waves-effect amber lighten-1 btn-large">Survey</button></a>
     </div>
+  </main>
+    <footer>
+      <div class="container">
+        <a href="/api/friends">Discover Friends in Middle Earth API</a>
+        <span>|</span>
+        <a href="https://github.com/JohnWP8253/friend-finder">GitHub Repo</a>
+      </div>
+    </footer>
 
-    <script
-	  src="https://code.jquery.com/jquery-3.2.1.min.js"
-	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
             
   </body>
 </html>

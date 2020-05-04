@@ -1,12 +1,12 @@
 // ===============================================================================
 // LOAD DATA
 // ===============================================================================
-var friends = require("../data/friends");
+var myFriends = require("../data/friends");
 
 module.exports = function (app) {
   // Return all friends found in friends.js as JSON
   app.get("/api/friends", function (req, res) {
-    res.json(friends);
+    res.json(myFriends);
   });
 
   app.post("/api/friends", function (req, res) {
@@ -26,10 +26,10 @@ module.exports = function (app) {
 
     // for-loop to start off with zero difference and compate user with existing friend scores, one at a time
     // add difference to total difference
-    for (var x = 0; x < friends.length; i++) {
+    for (var x = 0; x < myFriends.length; i++) {
       var totalDifference = 0;
-      for (var y = 0; y < friends[x].scores.length; y++) {
-        var difference = Math.abs(user.scores[y] - friends[x].scores[y]);
+      for (var y = 0; y < myFriends[x].scores.length; y++) {
+        var difference = Math.abs(user.scores[y] - myFriends[x].scores[y]);
         totalDifference += difference;
       }
       // if there is a new minimum, change the best match index and set the new minimum for the next iteration comparisons
@@ -39,8 +39,8 @@ module.exports = function (app) {
       }
     }
 
-    friends.push(user);
+    myFriends.push(user);
 
-    res.json(friends[bestMatchIndex]);
+    res.json(myFriends[bestMatchIndex]);
   });
 };
